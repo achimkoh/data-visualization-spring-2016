@@ -1,0 +1,10 @@
+The users are chosen based on the standard distance of their photos' geolocation. (Top 80 most spread-out users)
+
+Colors:
+(page 1) green - morning, yellow - afternoon, red - night
+(page 2) rainbow colors (red - sunday, orange - monday, ...)
+A quick online version that shows each day separately: http://achimkoh.github.io/code/2016/05/13/data-visualization-2.html
+
+Lines are connected if photos are posted on the same day (shows movement within same day)
+
+Was practicing text mining but need more time (need to do final project for actual text mining course)

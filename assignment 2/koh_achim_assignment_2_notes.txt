@@ -1,0 +1,19 @@
+Notes for Assignment 2
+
+I started with a rather simple question. By using the following command in R I can get this table:
+
+> sp = read.table("StPetersburg/sp_final.csv", header = TRUE, sep = ";")
+> table(sp$local_hour)
+
+    0     1     2     3     4     5     6     7     8     9    10    11 
+16990 16604 15218 14249 13684 15187 16680 17569 18253 19002 19219 19542 
+   12    13    14    15    16    17    18    19    20    21    22    23 
+19624 19515 19679 19514 19792 19559 19514 18861 18556 18409 17875 17520 
+
+4AM has 13,684 photos while 2PM has 19,679. Depending on how you look at it this might seem like a small difference; the maximum value is roughly 144% the minimum value. I felt this number is deceptive and wanted to see more clearly how the volume of instagram usage changes according to the hour of the day. 
+
+In the time animation, big red dots show data from the current hour, while smaller fading dots represent data from the previous and next hours. When you look at it, there seems to be a sharp decrease in the southern area and the island facing the delta, whereas the central area (and also the northern area, to some extent) of the city maintain a relatively constant volume of activity. So perhaps there is not much happening in the western and southern areas during late night.
+
+In order to get this result (koh_achim_assignment_2.gif) I subsetted the dataset into just the coordinates and local time, and exported it into 24 csv files each corresponding to a specific hour. I also downloaded the map tiles from stamen. I then imported the files in openFrameworks using the ofxCsv addon to create an animated map visualization. I didn't really optimize the code so the framerate was rather low, but what I wanted was an animated gif loop (something you could potentially upload to instagram) so a simple implementation was enough. I then exported a whole loop of 48 frames and turned those into a gif using the convert command line tool included in ImageMagick.
+
+I also made another version (koh_achim_assignment_2_alt.gif) which gets darker and brighter as the clock turns. I like the idea, but I feel the transition could use some more polishing.
